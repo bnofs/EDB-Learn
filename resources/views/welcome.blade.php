@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Ethnobotanical Database</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -32,6 +32,10 @@
                 display: flex;
                 justify-content: center;
             }
+            #logo {
+              width: 15%;
+              padding-bottom:20px;
+            }
             #explore {
               padding-top: 50px;
             }
@@ -56,7 +60,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 3.5em;
             }
 
             .links > a {
@@ -69,7 +73,7 @@
                 text-transform: uppercase;
             }
             .links > a:hover{
-              background-color: lightgrey;
+              background-color: #4CAF50;
               color: white;
               cursor: pointer;
             }
@@ -142,9 +146,53 @@
             #myUL li a:hover:not(.header) {
                 background-color: #eee; /* Add a hover effect to all links, except for headers */
             }
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              margin-left: 15%;
+              margin-right: 15%;
+              width: 70%;
+              z-index: 100;
+            }
+
+            li {
+              width: 25%;
+              float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 14px 20px 16px;
+                text-decoration: none;
+
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #4CAF50;
+            }
         </style>
     </head>
     <body>
+      <div id="home">
+
+      </div>
+      <ul>
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#news">Plants</a></li>
+        <li><a href="#contact">Recipes</a></li>
+        <li><a href="#about">Applications</a></li>
+      </ul>
       <div class="main">
 
         <div class="flex-center position-ref full-height">
@@ -160,7 +208,9 @@
             @endif
 
             <div class="content">
+                <img id="logo" src="/img/tree.jpeg" />
                 <div class="title m-b-md">
+
                     Ethnobotanical Database
                 </div>
                 <div class="links">
@@ -218,7 +268,6 @@
             modal.style.display = "none";
         }
     }
-
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -238,7 +287,7 @@
           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
           $('html, body').animate({
             scrollTop: $(hash).offset().top
-          }, 800, function(){
+          }, 1000, function(){
 
             // Add hash (#) to URL when done scrolling (default click behavior)
             window.location.hash = hash;
